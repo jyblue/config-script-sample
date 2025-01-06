@@ -47,12 +47,12 @@ fi
 
 SOURCE_FILE="./redis-6379.conf"
 DESTINATION_FILE="/etc/redis/redis-6379.conf"
-echo "Step 04: Copy and overwrite $TARGET_DIR ..."
+echo "Step 04: Copy and overwrite $DESTINATION_FILE ..."
 if [ ! -f "$SOURCE_FILE" ]; then
     echo "Source file $SOURCE_FILE does not exist. Aborting setup script."
     exit 1
 fi
-cp -f "$TARGET_FILE" "$DESTINATION_FILE"
+cp -f "$SOURCE_FILE" "$DESTINATION_FILE"
 if [ $? -eq 0 ]; then
     echo "File successfully copied from $SOURCE_FILE to $DESTINATION_FILE."
 else
@@ -61,12 +61,12 @@ fi
 
 SOURCE_FILE="./redis-server-6379.service"
 DESTINATION_FILE="/etc/systemd/system/redis-server-6379.conf"
-echo "Step 05: Copy and overwrite $TARGET_DIR ..."
+echo "Step 05: Copy and overwrite $DESTINATION_FILE ..."
 if [ ! -f "$SOURCE_FILE" ]; then
     echo "Source file $SOURCE_FILE does not exist. Aborting setup script."
     exit 1
 fi
-cp -f "$TARGET_FILE" "$DESTINATION_FILE"
+cp -f "$SOURCE_FILE" "$DESTINATION_FILE"
 if [ $? -eq 0 ]; then
     echo "File successfully copied from $SOURCE_FILE to $DESTINATION_FILE."
 else
