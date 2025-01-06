@@ -51,6 +51,7 @@ echo "Step 04: Copy and overwrite $TARGET_DIR ..."
 if [ ! -f "$SOURCE_FILE" ]; then
     echo "Source file $SOURCE_FILE does not exist. Aborting setup script."
     exit 1
+fi
 cp -f "$TARGET_FILE" "$DESTINATION_FILE"
 if [ $? -eq 0 ]; then
     echo "File successfully copied from $SOURCE_FILE to $DESTINATION_FILE."
@@ -64,6 +65,7 @@ echo "Step 05: Copy and overwrite $TARGET_DIR ..."
 if [ ! -f "$SOURCE_FILE" ]; then
     echo "Source file $SOURCE_FILE does not exist. Aborting setup script."
     exit 1
+fi
 cp -f "$TARGET_FILE" "$DESTINATION_FILE"
 if [ $? -eq 0 ]; then
     echo "File successfully copied from $SOURCE_FILE to $DESTINATION_FILE."
