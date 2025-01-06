@@ -3,7 +3,7 @@
 TARGET_DIR="/etc/redis"
 echo "Step 01: Checking if directory $TARGET_DIR exists..."
 if [ ! -d "$TARGET_DIR" ]; then
-    echo "Diriectory $TARGET_DIR does not exist. Proceeding to create the directory.
+    echo "Diriectory $TARGET_DIR does not exist. Proceeding to create the directory."
     mkdir -p "$TARGET_DIR"
     if [ $? -eq 0 ]; then
         echo "Diriectory $TARGET_DIT successfully created."
@@ -18,7 +18,7 @@ fi
 TARGET_DIR="/var/log/redis"
 echo "Step 02: Checking if directory $TARGET_DIR exists..."
 if [ ! -d "$TARGET_DIR" ]; then
-    echo "Diriectory $TARGET_DIR does not exist. Proceeding to create the directory.
+    echo "Diriectory $TARGET_DIR does not exist. Proceeding to create the directory."
     mkdir -p "$TARGET_DIR"
     if [ $? -eq 0 ]; then
         echo "Diriectory $TARGET_DIT successfully created."
@@ -33,7 +33,7 @@ fi
 TARGET_DIR="/var/lib/redis"
 echo "Step 03: Checking if directory $TARGET_DIR exists..."
 if [ ! -d "$TARGET_DIR" ]; then
-    echo "Diriectory $TARGET_DIR does not exist. Proceeding to create the directory.
+    echo "Diriectory $TARGET_DIR does not exist. Proceeding to create the directory."
     mkdir -p "$TARGET_DIR"
     if [ $? -eq 0 ]; then
         echo "Diriectory $TARGET_DIT successfully created."
