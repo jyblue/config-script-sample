@@ -6,7 +6,7 @@ if [ ! -d "$TARGET_DIR" ]; then
     echo "Diriectory $TARGET_DIR does not exist. Proceeding to create the directory."
     mkdir -p "$TARGET_DIR"
     if [ $? -eq 0 ]; then
-        echo "Diriectory $TARGET_DIT successfully created."
+        echo "Diriectory $TARGET_DIR successfully created."
     else
         echo "Failed to create directory $TARGET_DIR. Aborting setup script."
         exit 1
@@ -21,7 +21,7 @@ if [ ! -d "$TARGET_DIR" ]; then
     echo "Diriectory $TARGET_DIR does not exist. Proceeding to create the directory."
     mkdir -p "$TARGET_DIR"
     if [ $? -eq 0 ]; then
-        echo "Diriectory $TARGET_DIT successfully created."
+        echo "Diriectory $TARGET_DIR successfully created."
     else
         echo "Failed to create directory $TARGET_DIR. Aborting setup script."
         exit 1
@@ -36,7 +36,7 @@ if [ ! -d "$TARGET_DIR" ]; then
     echo "Diriectory $TARGET_DIR does not exist. Proceeding to create the directory."
     mkdir -p "$TARGET_DIR"
     if [ $? -eq 0 ]; then
-        echo "Diriectory $TARGET_DIT successfully created."
+        echo "Diriectory $TARGET_DIR successfully created."
     else
         echo "Failed to create directory $TARGET_DIR. Aborting setup script."
         exit 1
