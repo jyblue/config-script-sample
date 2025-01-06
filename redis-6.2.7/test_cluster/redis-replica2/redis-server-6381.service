@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/redis-server /etc/redis/redis-6381.conf
+ExecStart=/usr/local/bin/redis-server /etc/redis/redis-6381.conf
 ExecStop=/bin/kill -s TERM $MAINPID
 PIDFile=/run/redis/redis-server-6381.pid
 Restart=always
