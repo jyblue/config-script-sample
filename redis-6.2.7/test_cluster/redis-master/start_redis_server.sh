@@ -60,7 +60,7 @@ else
 fi
 
 SOURCE_FILE="./redis-server-6379.service"
-DESTINATION_FILE="/etc/systemd/system/redis-server-6379.conf"
+DESTINATION_FILE="/etc/systemd/system/redis-server-6379.service"
 echo "Step 05: Copy and overwrite $DESTINATION_FILE ..."
 if [ ! -f "$SOURCE_FILE" ]; then
     echo "Source file $SOURCE_FILE does not exist. Aborting setup script."
