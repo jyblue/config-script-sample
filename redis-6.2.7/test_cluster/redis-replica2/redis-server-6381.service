@@ -1,0 +1,15 @@
+[Unit]
+Description=Redis Server(Master)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/redis-server /etc/redis/redis-6381.conf
+ExecStop=/bin/kill -s TERM $MAINPID
+PIDFile=/run/redis/redis-server-6381.pid
+Restart=always
+User=redis
+Group=redis
+
+[Install]
+WantedBy=multi-user.target
