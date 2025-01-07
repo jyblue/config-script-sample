@@ -91,8 +91,8 @@ else
     exit 1
 fi
 
-SOURCE_FILE="./redis-6379.conf"
-DESTINATION_FILE="/etc/redis/redis-6379.conf"
+SOURCE_FILE="./redis-6380.conf"
+DESTINATION_FILE="/etc/redis/redis-6380.conf"
 echo "Step 04: Copy and overwrite $DESTINATION_FILE ..."
 if [ ! -f "$SOURCE_FILE" ]; then
     echo "Source file $SOURCE_FILE does not exist. Aborting setup script."
@@ -105,8 +105,8 @@ else
     echo "Failed to copy file. Aborting setup script."
 fi
 
-SOURCE_FILE="./redis-server-6379.service"
-DESTINATION_FILE="/etc/systemd/system/redis-server-6379.service"
+SOURCE_FILE="./redis-server-6380.service"
+DESTINATION_FILE="/etc/systemd/system/redis-server-6380.service"
 echo "Step 05: Copy and overwrite $DESTINATION_FILE ..."
 if [ ! -f "$SOURCE_FILE" ]; then
     echo "Source file $SOURCE_FILE does not exist. Aborting setup script."
@@ -119,7 +119,7 @@ else
     echo "Failed to copy file. Aborting setup script."
 fi
 
-SERVICE_NAME="redis-server-6379"
+SERVICE_NAME="redis-server-6380"
 systemctl stop $SERVICE_NAME
 echo "Step 06: Stop service $SERVICE_NAME ..."
 if [ $? -eq 0 ]; then
