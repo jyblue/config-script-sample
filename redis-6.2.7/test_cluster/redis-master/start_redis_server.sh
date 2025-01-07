@@ -58,6 +58,15 @@ else
     echo "Diriectory $TARGET_DIR already exists. No action needed."
 fi
 
+echo "Changing ownership of $TARGET_DIR to $REDIS_USER..."
+chown -R "$REDIS_USER" "$TARGET_DIR"
+if [ $? -eq 0 ]; then
+    echo "Ownership of $TARGET_DIR successfully changed to $REDIS_USER."
+else
+    echo "Failed to change ownership of $TARGET_DIR to $REDIS_USER."
+    exit 1
+fi
+
 TARGET_DIR="/var/lib/redis"
 echo "Step 03: Checking if directory $TARGET_DIR exists..."
 if [ ! -d "$TARGET_DIR" ]; then
@@ -71,6 +80,15 @@ if [ ! -d "$TARGET_DIR" ]; then
     fi
 else
     echo "Diriectory $TARGET_DIR already exists. No action needed."
+fi
+
+echo "Changing ownership of $TARGET_DIR to $REDIS_USER..."
+chown -R "$REDIS_USER" "$TARGET_DIR"
+if [ $? -eq 0 ]; then
+    echo "Ownership of $TARGET_DIR successfully changed to $REDIS_USER."
+else
+    echo "Failed to change ownership of $TARGET_DIR to $REDIS_USER."
+    exit 1
 fi
 
 SOURCE_FILE="./redis-6379.conf"
