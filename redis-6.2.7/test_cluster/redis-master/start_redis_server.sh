@@ -1,5 +1,33 @@
 #!/bin/bash
 
+REDIS_GROUP="redis"
+if ! getent group "$REDIS_GROUP" > /dev/null; then
+    echo "Group $REDIS_GROUP does not exist. Proceeding to create the group."
+    groupadd "$REDIS_GROUP"
+    if [ $? -eq 0 ]; then
+        echo "group $REDIS_GROUP successfully created."
+    else
+        echo "Failed to create group $REDIS_GROUP. Aborting setup script."
+        exit 1
+    fi
+else
+    echo "Group $REDIS_GROUP already exists. No action needed."
+fi
+
+REDIS_USER="redis"
+if ! id "$REDIS_USER" > /dev/null 2>&1; then
+    echo "User $REDIS_USER does not exist. Creating the user..."
+    useradd -r -g "$REDIS_GROUP" -M "$REDIS_USER"
+    if [ $? -eq 0 ]; then
+        echo "User $REDIS_USER successfully created."
+    else
+        echo "Failed to create user $REDIS_USER. Aborting setup script."
+        exit 1
+    fi
+else
+    echo "User $REDIS_USER already exists. No action needed."
+fi
+
 TARGET_DIR="/etc/redis"
 echo "Step 01: Checking if directory $TARGET_DIR exists..."
 if [ ! -d "$TARGET_DIR" ]; then
